@@ -4,12 +4,12 @@ import os
 from boto3.dynamodb.conditions import Key
 
 
-SUPPORTED_PLATFORM = {'andriod': os.environ['ANDROID_SNS_PLATFORM'],
+SUPPORTED_PLATFORM = {'android': os.environ['ANDROID_SNS_PLATFORM'],
                       'ios': os.environ['IOS_SNS_PLATFORM']}
 REGISTRATION_DDB_TABLE = os.environ['REGISTRATION_DDB_TABLE']
 
-dynamodb_resource = boto3.resource('dynamodb', region_name='ap-southeast-2')
-sns_client = boto3.client('sns', region_name='ap-southeast-2')
+dynamodb_resource = boto3.resource('dynamodb', region_name='ap-northeast-2')
+sns_client = boto3.client('sns', region_name='ap-northeast-2')
 
 table = dynamodb_resource.Table(REGISTRATION_DDB_TABLE)
 
